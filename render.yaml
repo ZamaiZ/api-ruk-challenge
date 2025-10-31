@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: api-ruk-challenge
+    runtime: node
+    buildCommand: chmod +x render-build.sh && ./render-build.sh
+    startCommand: pnpm start:prod
+    envVars:
+      - key: NODE_VERSION
+        value: 22.16.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ruk-challenge-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 3000
+
+databases:
+  - name: ruk-challenge-db
+    databaseName: ruk_challenge_db
+    user: ruk_challenge_db_user
+
