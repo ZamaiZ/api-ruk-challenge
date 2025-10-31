@@ -1,0 +1,58 @@
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  telephones: [Telephone!]!
+  created_at: String!
+  modified_at: String!
+}
+
+type Telephone {
+  id: ID!
+  number: String!
+  area_code: String!
+}
+
+input TelephoneInput {
+  number: String!
+  area_code: String!
+}
+
+input SignUpInput {
+  name: String!
+  email: String!
+  password: String!
+  telephones: [TelephoneInput!]!
+}
+
+input SignInInput {
+  email: String!
+  password: String!
+}
+
+type SignUpResponse {
+  id: ID!
+  created_at: String!
+  modified_at: String!
+}
+
+type SignInResponse {
+  token: String!
+}
+
+type PaginatedUsers {
+  users: [User!]!
+  total: Int!
+  page: Int!
+  pageSize: Int!
+}
+
+type Query {
+  getUser: User!
+  listUsers(page: Int, pageSize: Int, search: String): PaginatedUsers!
+}
+
+type Mutation {
+  signUp(input: SignUpInput!): SignUpResponse!
+  signIn(input: SignInInput!): SignInResponse!
+}

@@ -1,0 +1,9 @@
+schema: src/schema.graphql
+documents: '**/*.graphql'
+extensions:
+  endpoints:
+    default:
+      url: http://localhost:3000/graphql
+      headers:
+        Authorization: 'Bearer ${JWT_TOKEN}'
+

@@ -1,0 +1,12 @@
+PORT=3000
+NODE=ENV
+
+
+# ---- DEV ----
+# DATABASE_URL="postgresql://postgres:postgres@localhost:5432/app?schema=public"
+# JWT_SECRET="b7094dce3dbd3791eba94d6d562ad68cd69ef08362fd319c85352c4b855999ac21a083b18a91fb7f57c2859248198aedf9fcdf068ce4fe6d0664b847f6745a44"
+
+
+# ---- PROD ----
+DATABASE_URL="postgresql://ruk_challenge_db_user:Ah9A9GA1sMbTecq3o5TdWUGkXTQenoRn@dpg-d42a0reuk2gs73bds5r0-a/ruk_challenge_db"
+JWT_SECRET="a7f3b067d32722671586338c788d882e299f95e557f3b86925d9d63037035d5e62e7e198cedc6345e3cffcd728d9461bdd57274d3550e2c535ff771982a70ad7"
