@@ -3,7 +3,7 @@ services:
     name: api-ruk-challenge
     runtime: node
     buildCommand: chmod +x render-build.sh && ./render-build.sh
-    startCommand: pnpm start:prod
+    startCommand: node dist/main.js
     envVars:
       - key: NODE_VERSION
         value: 22.16.0
